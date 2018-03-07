@@ -12,6 +12,8 @@
 		B280793A205010B30033D8CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2807938205010B30033D8CA /* Main.storyboard */; };
 		B280793C205010B30033D8CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B280793B205010B30033D8CA /* Assets.xcassets */; };
 		B280793F205010B30033D8CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B280793D205010B30033D8CA /* LaunchScreen.storyboard */; };
+		B2807947205010C20033D8CA /* MIDIEventKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2807946205010C20033D8CA /* MIDIEventKit.swift */; };
+		B2807949205063740033D8CA /* MIDIEventKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2807948205063740033D8CA /* MIDIEventKit.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		B280793B205010B30033D8CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B280793E205010B30033D8CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2807940205010B30033D8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2807946205010C20033D8CA /* MIDIEventKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIEventKit.swift; sourceTree = "<group>"; };
+		B2807948205063740033D8CA /* MIDIEventKit.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MIDIEventKit.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				B280793B205010B30033D8CA /* Assets.xcassets */,
 				B280793D205010B30033D8CA /* LaunchScreen.storyboard */,
 				B2807940205010B30033D8CA /* Info.plist */,
+				B2807946205010C20033D8CA /* MIDIEventKit.swift */,
+				B2807948205063740033D8CA /* MIDIEventKit.strings */,
 			);
 			path = MIDIEventKit;
 			sourceTree = "<group>";
@@ -124,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B280793F205010B30033D8CA /* LaunchScreen.storyboard in Resources */,
+				B2807949205063740033D8CA /* MIDIEventKit.strings in Resources */,
 				B280793C205010B30033D8CA /* Assets.xcassets in Resources */,
 				B280793A205010B30033D8CA /* Main.storyboard in Resources */,
 			);
@@ -136,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2807947205010C20033D8CA /* MIDIEventKit.swift in Sources */,
 				B2807937205010B30033D8CA /* ViewController.swift in Sources */,
 				B2807935205010B30033D8CA /* AppDelegate.swift in Sources */,
 			);
@@ -277,6 +285,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77Y3N48SNF;
 				INFOPLIST_FILE = MIDIEventKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.MIDIEventKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77Y3N48SNF;
 				INFOPLIST_FILE = MIDIEventKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.MIDIEventKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
