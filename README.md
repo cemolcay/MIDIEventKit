@@ -18,3 +18,8 @@ pod 'MIDIEventKit'
 Usage
 ----
 Send or receive `MIDIPacket`s or `MIDIPacketList`s from `CoreMIDI` or [AudioKit](github.com/AudioKit/AudioKit)'s `AKMIDI` easily with MIDIEventKit data structures.
+
+Documentation
+----
+
+You can find documentation on [here](http://cemolcay.github.io/MIDIEventKit).
