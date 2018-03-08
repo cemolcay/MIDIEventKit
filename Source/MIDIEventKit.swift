@@ -55,12 +55,12 @@ public enum MIDIEventTimeStamp {
 /// Holds two UInt8 MIDI data packets for the event messages.
 public struct MIDIEventData {
   /// First midi data packet.
-  var data1: UInt8
+  public var data1: UInt8
   /// Second midi data packet.
-  var data2: UInt8
+  public var data2: UInt8
 
   /// Both data packets are empty.
-  init() {
+  public init() {
     data1 = 0
     data2 = 0
   }
@@ -70,7 +70,7 @@ public struct MIDIEventData {
   /// - Parameters:
   ///   - data1: First data packet value.
   ///   - data2: Second data packet value.
-  init(data1: UInt8, data2: UInt8) {
+  public init(data1: UInt8, data2: UInt8) {
     self.data1 = data1
     self.data2 = data2
   }
@@ -78,7 +78,7 @@ public struct MIDIEventData {
   /// Initilize only first data packet with UInt8 value between 0 - 127.
   ///
   /// - Parameter data1: First data packet value.
-  init(data1: UInt8) {
+  public init(data1: UInt8) {
     self.data1 = data1
     self.data2 = 0
   }
@@ -86,7 +86,7 @@ public struct MIDIEventData {
   /// Initilize both packets with a UInt16 value between 0 - 16383.
   ///
   /// - Parameter data: Both data packets will be created by spliting into two UInt8 data packets by this UInt16 value.
-  init(data: UInt16) {
+  public init(data: UInt16) {
     let mask: UInt16 = 0x007F
     self.data1 = UInt8(data & mask) // MSB, bit shift right 7
     self.data2 = UInt8((data & (mask << 7)) >> 7) // LSB, mask of 127
@@ -95,7 +95,7 @@ public struct MIDIEventData {
   /// Initilize only first packet with a toggle on/off value.
   ///
   /// - Parameter on: On/off value of the first data packet.
-  init(on: Bool) {
+  public init(on: Bool) {
     self.data1 = on ? 127 : 0
     self.data2 = 0
   }
@@ -104,16 +104,16 @@ public struct MIDIEventData {
 /// Create MIDI event messages with MIDIStatusEvent enums for sending or create them from MIDIPacket's for parsing received MIDI message.
 public struct MIDIEvent {
   /// Event type of the MIDI message.
-  var event: MIDIStatusEvent
+  public var event: MIDIStatusEvent
   /// Timestamp of the MIDI message.
-  var timestamp: MIDIEventTimeStamp
+  public var timestamp: MIDIEventTimeStamp
 
   /// Initilize midi event with `MIDIStatusEvent` enums and a timestamp.
   ///
   /// - Parameters:
   ///   - event: Event type of the message.
   ///   - timestamp: Timestamp of the message.
-  init(event: MIDIStatusEvent, timestamp: MIDIEventTimeStamp) {
+  public init(event: MIDIStatusEvent, timestamp: MIDIEventTimeStamp) {
     self.event = event
     self.timestamp = timestamp
   }
@@ -121,13 +121,13 @@ public struct MIDIEvent {
   /// Initilize midi event by parsing received midi packet.
   ///
   /// - Parameter midiPacket: Received midi packet for parsing into `MIDIEvent` struct.
-  init(midiPacket: MIDIPacket) {
+  public init(midiPacket: MIDIPacket) {
     event = MIDIChannelVoiceEvent.noteOn(note: 0, velocity: 0, channel: 0)
     timestamp = .now
   }
 
   /// MIDI Packet representation for sending event message.
-  var midiPacket: MIDIPacket {
+  public var midiPacket: MIDIPacket {
     var packet = MIDIPacket()
     packet.timeStamp = timestamp.value
     packet.length = 3
@@ -168,7 +168,7 @@ public enum MIDIChannelVoiceEvent: MIDIStatusEvent {
     case .noteOff(let note, let velocity, _): return MIDIEventData(data1: note, data2: velocity)
     case .noteOn(let note, let velocity, _): return MIDIEventData(data1: note, data2: velocity)
     case .polyphonicAftertouch(let note, let pressure, _): return MIDIEventData(data1: note, data2: pressure)
-    case .controllerChange(let event, _): return event.dataBytes
+    case .controllerChange(let event, _): return MIDIEventData(data1: event.statusByte, data2: event.dataBytes.data1)
     case .programChange(let program, _): return MIDIEventData(data1: program)
     case .channelAftertouch(let pressure, _): return MIDIEventData(data1: pressure)
     case .pitchBendChange(let bend, _): return MIDIEventData(data: bend)

@@ -4,10 +4,43 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MIDIEventKit.xcscheme</key>
+		<key>Example.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>MIDIEventKit Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>MIDIEventKit iOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>MIDIEventKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>B280796B205167F70033D8CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B2807977205168090033D8CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B280799A205168BE0033D8CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

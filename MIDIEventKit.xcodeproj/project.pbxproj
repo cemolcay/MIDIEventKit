@@ -7,87 +7,298 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B2807935205010B30033D8CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2807934205010B30033D8CA /* AppDelegate.swift */; };
-		B2807937205010B30033D8CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2807936205010B30033D8CA /* ViewController.swift */; };
-		B280793A205010B30033D8CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2807938205010B30033D8CA /* Main.storyboard */; };
-		B280793C205010B30033D8CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B280793B205010B30033D8CA /* Assets.xcassets */; };
-		B280793F205010B30033D8CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B280793D205010B30033D8CA /* LaunchScreen.storyboard */; };
-		B2807947205010C20033D8CA /* MIDIEventKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2807946205010C20033D8CA /* MIDIEventKit.swift */; };
-		B2807949205063740033D8CA /* MIDIEventKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2807948205063740033D8CA /* MIDIEventKit.strings */; };
+		3C27CD968434FE4F018AEFC6 /* Pods_MIDIEventKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4C415C5F92E165807ECFD6 /* Pods_MIDIEventKit_iOS.framework */; };
+		6774B437761D5FE9E890D38E /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D41202A472183AF280DA2C8 /* Pods_Example.framework */; };
+		B280797B205168090033D8CA /* MIDIEventKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B280797A205168090033D8CA /* MIDIEventKitTests.swift */; };
+		B280797D205168090033D8CA /* MIDIEventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B280796C205167F70033D8CA /* MIDIEventKit.framework */; };
+		B28079892051687C0033D8CA /* MIDIEventKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B28079842051687C0033D8CA /* MIDIEventKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B280798A2051687C0033D8CA /* MIDIEventKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B28079842051687C0033D8CA /* MIDIEventKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B280798B2051687C0033D8CA /* MIDIEventKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = B28079852051687C0033D8CA /* MIDIEventKit.strings */; };
+		B280798C2051687C0033D8CA /* MIDIEventKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = B28079852051687C0033D8CA /* MIDIEventKit.strings */; };
+		B280798D2051687C0033D8CA /* MIDIEventKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = B28079852051687C0033D8CA /* MIDIEventKit.strings */; };
+		B280798E2051687C0033D8CA /* Info iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = B28079862051687C0033D8CA /* Info iOS.plist */; };
+		B28079922051687C0033D8CA /* Info Mac.plist in Resources */ = {isa = PBXBuildFile; fileRef = B28079872051687C0033D8CA /* Info Mac.plist */; };
+		B28079942051687C0033D8CA /* MIDIEventKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28079882051687C0033D8CA /* MIDIEventKit.swift */; };
+		B28079952051687C0033D8CA /* MIDIEventKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28079882051687C0033D8CA /* MIDIEventKit.swift */; };
+		B28079962051687C0033D8CA /* MIDIEventKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28079882051687C0033D8CA /* MIDIEventKit.swift */; };
+		B280799E205168BE0033D8CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B280799D205168BE0033D8CA /* AppDelegate.swift */; };
+		B28079A0205168BE0033D8CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B280799F205168BE0033D8CA /* ViewController.swift */; };
+		B28079A2205168BE0033D8CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28079A1205168BE0033D8CA /* Assets.xcassets */; };
+		B28079A5205168BE0033D8CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28079A3205168BE0033D8CA /* Main.storyboard */; };
+		B28079AC20516B290033D8CA /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28079AB20516B290033D8CA /* CoreMIDI.framework */; };
+		B28079AD20516B8D0033D8CA /* MIDIEventKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28079882051687C0033D8CA /* MIDIEventKit.swift */; };
+		B28079AE20516B900033D8CA /* MIDIEventKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = B28079852051687C0033D8CA /* MIDIEventKit.strings */; };
+		D5DFD8B2E77E3A061CFCB1A5 /* Pods_MIDIEventKit_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858EF4380B4819866C63B217 /* Pods_MIDIEventKit_Mac.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B280797E205168090033D8CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2807929205010B30033D8CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B280796B205167F70033D8CA;
+			remoteInfo = "MIDIEventKit Mac";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		B2807931205010B30033D8CA /* MIDIEventKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIDIEventKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2807934205010B30033D8CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B2807936205010B30033D8CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B2807939205010B30033D8CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B280793B205010B30033D8CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B280793E205010B30033D8CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B2807940205010B30033D8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2807946205010C20033D8CA /* MIDIEventKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIEventKit.swift; sourceTree = "<group>"; };
-		B2807948205063740033D8CA /* MIDIEventKit.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MIDIEventKit.strings; sourceTree = "<group>"; };
+		19FF26D21C0824B962ABA6BF /* Pods-MIDIEventKit Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIDIEventKit Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-MIDIEventKit Mac/Pods-MIDIEventKit Mac.release.xcconfig"; sourceTree = "<group>"; };
+		232D2816BBD0388804ED3C0C /* Pods-MIDIEventKit iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIDIEventKit iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MIDIEventKit iOS/Pods-MIDIEventKit iOS.release.xcconfig"; sourceTree = "<group>"; };
+		2864A751D34FED48A1DE1D74 /* Pods_MIDIEventKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MIDIEventKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B2994F511D8ABB2E62810E0 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2F4C415C5F92E165807ECFD6 /* Pods_MIDIEventKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MIDIEventKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D41202A472183AF280DA2C8 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		722A54B90897D6803A8EAC38 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		775140D3856077E9A776235A /* Pods_MIDIEventKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MIDIEventKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FBCA92B0E4245B447B87FFD /* Pods-MIDIEventKit Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIDIEventKit Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MIDIEventKit Mac/Pods-MIDIEventKit Mac.debug.xcconfig"; sourceTree = "<group>"; };
+		858EF4380B4819866C63B217 /* Pods_MIDIEventKit_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MIDIEventKit_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A68D4B5865478FE4D4B27CC /* Pods-MIDIEventKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIDIEventKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MIDIEventKit/Pods-MIDIEventKit.debug.xcconfig"; sourceTree = "<group>"; };
+		B280795F205167E80033D8CA /* MIDIEventKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MIDIEventKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B280796C205167F70033D8CA /* MIDIEventKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MIDIEventKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2807978205168090033D8CA /* MIDIEventKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MIDIEventKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B280797A205168090033D8CA /* MIDIEventKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIEventKitTests.swift; sourceTree = "<group>"; };
+		B280797C205168090033D8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B28079842051687C0033D8CA /* MIDIEventKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDIEventKit.h; sourceTree = "<group>"; };
+		B28079852051687C0033D8CA /* MIDIEventKit.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MIDIEventKit.strings; sourceTree = "<group>"; };
+		B28079862051687C0033D8CA /* Info iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info iOS.plist"; sourceTree = "<group>"; };
+		B28079872051687C0033D8CA /* Info Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info Mac.plist"; sourceTree = "<group>"; };
+		B28079882051687C0033D8CA /* MIDIEventKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDIEventKit.swift; sourceTree = "<group>"; };
+		B280799B205168BE0033D8CA /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B280799D205168BE0033D8CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B280799F205168BE0033D8CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B28079A1205168BE0033D8CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B28079A4205168BE0033D8CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B28079A6205168BE0033D8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B28079A7205168BE0033D8CA /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
+		B28079AB20516B290033D8CA /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreMIDI.framework; sourceTree = DEVELOPER_DIR; };
+		BEDE4FE77723D5BFF62AD8B5 /* Pods-MIDIEventKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIDIEventKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MIDIEventKit/Pods-MIDIEventKit.release.xcconfig"; sourceTree = "<group>"; };
+		CC66C653A2497129D2BAE6FF /* Pods-MIDIEventKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIDIEventKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MIDIEventKitTests/Pods-MIDIEventKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED90A5E01F31F8314E514BDA /* Pods-MIDIEventKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIDIEventKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MIDIEventKitTests/Pods-MIDIEventKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		F40C8B9623A92EBA39F925C8 /* Pods-MIDIEventKit iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MIDIEventKit iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MIDIEventKit iOS/Pods-MIDIEventKit iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B280792E205010B30033D8CA /* Frameworks */ = {
+		B280795B205167E80033D8CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C27CD968434FE4F018AEFC6 /* Pods_MIDIEventKit_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2807968205167F70033D8CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5DFD8B2E77E3A061CFCB1A5 /* Pods_MIDIEventKit_Mac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2807975205168090033D8CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B280797D205168090033D8CA /* MIDIEventKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2807998205168BE0033D8CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B28079AC20516B290033D8CA /* CoreMIDI.framework in Frameworks */,
+				6774B437761D5FE9E890D38E /* Pods_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FF0F4E81EE0E252533CD33A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A68D4B5865478FE4D4B27CC /* Pods-MIDIEventKit.debug.xcconfig */,
+				BEDE4FE77723D5BFF62AD8B5 /* Pods-MIDIEventKit.release.xcconfig */,
+				CC66C653A2497129D2BAE6FF /* Pods-MIDIEventKitTests.debug.xcconfig */,
+				ED90A5E01F31F8314E514BDA /* Pods-MIDIEventKitTests.release.xcconfig */,
+				2B2994F511D8ABB2E62810E0 /* Pods-Example.debug.xcconfig */,
+				722A54B90897D6803A8EAC38 /* Pods-Example.release.xcconfig */,
+				7FBCA92B0E4245B447B87FFD /* Pods-MIDIEventKit Mac.debug.xcconfig */,
+				19FF26D21C0824B962ABA6BF /* Pods-MIDIEventKit Mac.release.xcconfig */,
+				F40C8B9623A92EBA39F925C8 /* Pods-MIDIEventKit iOS.debug.xcconfig */,
+				232D2816BBD0388804ED3C0C /* Pods-MIDIEventKit iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B2807928205010B30033D8CA = {
 			isa = PBXGroup;
 			children = (
-				B2807933205010B30033D8CA /* MIDIEventKit */,
+				B28079832051687C0033D8CA /* Source */,
+				B2807979205168090033D8CA /* MIDIEventKitTests */,
+				B280799C205168BE0033D8CA /* Example */,
 				B2807932205010B30033D8CA /* Products */,
+				1FF0F4E81EE0E252533CD33A /* Pods */,
+				C333FE4DFD2D9D20F8EAE7C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		B2807932205010B30033D8CA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B2807931205010B30033D8CA /* MIDIEventKit.app */,
+				B280795F205167E80033D8CA /* MIDIEventKit.framework */,
+				B280796C205167F70033D8CA /* MIDIEventKit.framework */,
+				B2807978205168090033D8CA /* MIDIEventKitTests.xctest */,
+				B280799B205168BE0033D8CA /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B2807933205010B30033D8CA /* MIDIEventKit */ = {
+		B2807979205168090033D8CA /* MIDIEventKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				B2807934205010B30033D8CA /* AppDelegate.swift */,
-				B2807936205010B30033D8CA /* ViewController.swift */,
-				B2807938205010B30033D8CA /* Main.storyboard */,
-				B280793B205010B30033D8CA /* Assets.xcassets */,
-				B280793D205010B30033D8CA /* LaunchScreen.storyboard */,
-				B2807940205010B30033D8CA /* Info.plist */,
-				B2807946205010C20033D8CA /* MIDIEventKit.swift */,
-				B2807948205063740033D8CA /* MIDIEventKit.strings */,
+				B280797A205168090033D8CA /* MIDIEventKitTests.swift */,
+				B280797C205168090033D8CA /* Info.plist */,
 			);
-			path = MIDIEventKit;
+			path = MIDIEventKitTests;
+			sourceTree = "<group>";
+		};
+		B28079832051687C0033D8CA /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B28079842051687C0033D8CA /* MIDIEventKit.h */,
+				B28079852051687C0033D8CA /* MIDIEventKit.strings */,
+				B28079862051687C0033D8CA /* Info iOS.plist */,
+				B28079872051687C0033D8CA /* Info Mac.plist */,
+				B28079882051687C0033D8CA /* MIDIEventKit.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		B280799C205168BE0033D8CA /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				B280799D205168BE0033D8CA /* AppDelegate.swift */,
+				B280799F205168BE0033D8CA /* ViewController.swift */,
+				B28079A1205168BE0033D8CA /* Assets.xcassets */,
+				B28079A3205168BE0033D8CA /* Main.storyboard */,
+				B28079A6205168BE0033D8CA /* Info.plist */,
+				B28079A7205168BE0033D8CA /* Example.entitlements */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		C333FE4DFD2D9D20F8EAE7C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B28079AB20516B290033D8CA /* CoreMIDI.framework */,
+				775140D3856077E9A776235A /* Pods_MIDIEventKit.framework */,
+				2864A751D34FED48A1DE1D74 /* Pods_MIDIEventKitTests.framework */,
+				4D41202A472183AF280DA2C8 /* Pods_Example.framework */,
+				858EF4380B4819866C63B217 /* Pods_MIDIEventKit_Mac.framework */,
+				2F4C415C5F92E165807ECFD6 /* Pods_MIDIEventKit_iOS.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B280795C205167E80033D8CA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B28079892051687C0033D8CA /* MIDIEventKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2807969205167F70033D8CA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B280798A2051687C0033D8CA /* MIDIEventKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		B2807930205010B30033D8CA /* MIDIEventKit */ = {
+		B280795E205167E80033D8CA /* MIDIEventKit iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B2807943205010B30033D8CA /* Build configuration list for PBXNativeTarget "MIDIEventKit" */;
+			buildConfigurationList = B2807964205167E80033D8CA /* Build configuration list for PBXNativeTarget "MIDIEventKit iOS" */;
 			buildPhases = (
-				B280792D205010B30033D8CA /* Sources */,
-				B280792E205010B30033D8CA /* Frameworks */,
-				B280792F205010B30033D8CA /* Resources */,
+				F05D1E6640B11F31B3CFCD37 /* [CP] Check Pods Manifest.lock */,
+				B280795A205167E80033D8CA /* Sources */,
+				B280795B205167E80033D8CA /* Frameworks */,
+				B280795C205167E80033D8CA /* Headers */,
+				B280795D205167E80033D8CA /* Resources */,
+				CD03B685CFF8C11AA8DCC674 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MIDIEventKit;
-			productName = MIDIEventKit;
-			productReference = B2807931205010B30033D8CA /* MIDIEventKit.app */;
+			name = "MIDIEventKit iOS";
+			productName = "MIDIEventKit iOS";
+			productReference = B280795F205167E80033D8CA /* MIDIEventKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B280796B205167F70033D8CA /* MIDIEventKit Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2807971205167F70033D8CA /* Build configuration list for PBXNativeTarget "MIDIEventKit Mac" */;
+			buildPhases = (
+				30BCE5DA0EEFF86606049354 /* [CP] Check Pods Manifest.lock */,
+				B2807967205167F70033D8CA /* Sources */,
+				B2807968205167F70033D8CA /* Frameworks */,
+				B2807969205167F70033D8CA /* Headers */,
+				B280796A205167F70033D8CA /* Resources */,
+				F3463BF46FB398D379B93DD2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MIDIEventKit Mac";
+			productName = "MIDIEventKit Mac";
+			productReference = B280796C205167F70033D8CA /* MIDIEventKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B2807977205168090033D8CA /* MIDIEventKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2807980205168090033D8CA /* Build configuration list for PBXNativeTarget "MIDIEventKitTests" */;
+			buildPhases = (
+				B2807974205168090033D8CA /* Sources */,
+				B2807975205168090033D8CA /* Frameworks */,
+				B2807976205168090033D8CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B280797F205168090033D8CA /* PBXTargetDependency */,
+			);
+			name = MIDIEventKitTests;
+			productName = MIDIEventKitTests;
+			productReference = B2807978205168090033D8CA /* MIDIEventKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B280799A205168BE0033D8CA /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B28079A8205168BE0033D8CA /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				8CF6DC63B993F283650ED464 /* [CP] Check Pods Manifest.lock */,
+				B2807997205168BE0033D8CA /* Sources */,
+				B2807998205168BE0033D8CA /* Frameworks */,
+				B2807999205168BE0033D8CA /* Resources */,
+				487808480A4B534AC44FA9C0 /* [CP] Embed Pods Frameworks */,
+				0598B87AD280C61727DA11C2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Example;
+			productName = Example;
+			productReference = B280799B205168BE0033D8CA /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -100,7 +311,19 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = cemolcay;
 				TargetAttributes = {
-					B2807930205010B30033D8CA = {
+					B280795E205167E80033D8CA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					B280796B205167F70033D8CA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					B2807977205168090033D8CA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					B280799A205168BE0033D8CA = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -119,53 +342,226 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B2807930205010B30033D8CA /* MIDIEventKit */,
+				B280795E205167E80033D8CA /* MIDIEventKit iOS */,
+				B280796B205167F70033D8CA /* MIDIEventKit Mac */,
+				B2807977205168090033D8CA /* MIDIEventKitTests */,
+				B280799A205168BE0033D8CA /* Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B280792F205010B30033D8CA /* Resources */ = {
+		B280795D205167E80033D8CA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B280793F205010B30033D8CA /* LaunchScreen.storyboard in Resources */,
-				B2807949205063740033D8CA /* MIDIEventKit.strings in Resources */,
-				B280793C205010B30033D8CA /* Assets.xcassets in Resources */,
-				B280793A205010B30033D8CA /* Main.storyboard in Resources */,
+				B280798B2051687C0033D8CA /* MIDIEventKit.strings in Resources */,
+				B280798E2051687C0033D8CA /* Info iOS.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B280796A205167F70033D8CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B280798C2051687C0033D8CA /* MIDIEventKit.strings in Resources */,
+				B28079922051687C0033D8CA /* Info Mac.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2807976205168090033D8CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B280798D2051687C0033D8CA /* MIDIEventKit.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2807999205168BE0033D8CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B28079AE20516B900033D8CA /* MIDIEventKit.strings in Resources */,
+				B28079A2205168BE0033D8CA /* Assets.xcassets in Resources */,
+				B28079A5205168BE0033D8CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0598B87AD280C61727DA11C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30BCE5DA0EEFF86606049354 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MIDIEventKit Mac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		487808480A4B534AC44FA9C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AudioKit/AudioKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CF6DC63B993F283650ED464 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD03B685CFF8C11AA8DCC674 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MIDIEventKit iOS/Pods-MIDIEventKit iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F05D1E6640B11F31B3CFCD37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MIDIEventKit iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3463BF46FB398D379B93DD2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MIDIEventKit Mac/Pods-MIDIEventKit Mac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		B280792D205010B30033D8CA /* Sources */ = {
+		B280795A205167E80033D8CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2807947205010C20033D8CA /* MIDIEventKit.swift in Sources */,
-				B2807937205010B30033D8CA /* ViewController.swift in Sources */,
-				B2807935205010B30033D8CA /* AppDelegate.swift in Sources */,
+				B28079942051687C0033D8CA /* MIDIEventKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2807967205167F70033D8CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B28079952051687C0033D8CA /* MIDIEventKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2807974205168090033D8CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B28079962051687C0033D8CA /* MIDIEventKit.swift in Sources */,
+				B280797B205168090033D8CA /* MIDIEventKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2807997205168BE0033D8CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B28079AD20516B8D0033D8CA /* MIDIEventKit.swift in Sources */,
+				B28079A0205168BE0033D8CA /* ViewController.swift in Sources */,
+				B280799E205168BE0033D8CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B280797F205168090033D8CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B280796B205167F70033D8CA /* MIDIEventKit Mac */;
+			targetProxy = B280797E205168090033D8CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		B2807938205010B30033D8CA /* Main.storyboard */ = {
+		B28079A3205168BE0033D8CA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B2807939205010B30033D8CA /* Base */,
+				B28079A4205168BE0033D8CA /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B280793D205010B30033D8CA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B280793E205010B30033D8CA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -278,35 +674,187 @@
 			};
 			name = Release;
 		};
-		B2807944205010B30033D8CA /* Debug */ = {
+		B2807965205167E80033D8CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F40C8B9623A92EBA39F925C8 /* Pods-MIDIEventKit iOS.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 77Y3N48SNF;
-				INFOPLIST_FILE = MIDIEventKit/Info.plist;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.MIDIEventKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cemolcay.MIDIEventKit-iOS";
+				PRODUCT_NAME = MIDIEventKit;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		B2807945205010B30033D8CA /* Release */ = {
+		B2807966205167E80033D8CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 232D2816BBD0388804ED3C0C /* Pods-MIDIEventKit iOS.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 77Y3N48SNF;
-				INFOPLIST_FILE = MIDIEventKit/Info.plist;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info iOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.MIDIEventKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cemolcay.MIDIEventKit-iOS";
+				PRODUCT_NAME = MIDIEventKit;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B2807972205167F70033D8CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FBCA92B0E4245B447B87FFD /* Pods-MIDIEventKit Mac.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 77Y3N48SNF;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info Mac.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cemolcay.MIDIEventKit-Mac";
+				PRODUCT_NAME = MIDIEventKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B2807973205167F70033D8CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FF26D21C0824B962ABA6BF /* Pods-MIDIEventKit Mac.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 77Y3N48SNF;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info Mac.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cemolcay.MIDIEventKit-Mac";
+				PRODUCT_NAME = MIDIEventKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B2807981205168090033D8CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 77Y3N48SNF;
+				INFOPLIST_FILE = MIDIEventKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.MIDIEventKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		B2807982205168090033D8CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 77Y3N48SNF;
+				INFOPLIST_FILE = MIDIEventKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.MIDIEventKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		B28079A9205168BE0033D8CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B2994F511D8ABB2E62810E0 /* Pods-Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 77Y3N48SNF;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		B28079AA205168BE0033D8CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 722A54B90897D6803A8EAC38 /* Pods-Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 77Y3N48SNF;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -322,11 +870,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B2807943205010B30033D8CA /* Build configuration list for PBXNativeTarget "MIDIEventKit" */ = {
+		B2807964205167E80033D8CA /* Build configuration list for PBXNativeTarget "MIDIEventKit iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B2807944205010B30033D8CA /* Debug */,
-				B2807945205010B30033D8CA /* Release */,
+				B2807965205167E80033D8CA /* Debug */,
+				B2807966205167E80033D8CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2807971205167F70033D8CA /* Build configuration list for PBXNativeTarget "MIDIEventKit Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2807972205167F70033D8CA /* Debug */,
+				B2807973205167F70033D8CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2807980205168090033D8CA /* Build configuration list for PBXNativeTarget "MIDIEventKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2807981205168090033D8CA /* Debug */,
+				B2807982205168090033D8CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B28079A8205168BE0033D8CA /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B28079A9205168BE0033D8CA /* Debug */,
+				B28079AA205168BE0033D8CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
