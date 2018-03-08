@@ -110,7 +110,7 @@ Send or receive `MIDIPacket`s or `MIDIPacketList`s from `CoreMIDI` or [AudioKit]
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "MIDIEventKit/Source/MIDIEventKit.swift"
+  s.source_files  = "Source/MIDIEventKit.swift"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -124,7 +124,7 @@ Send or receive `MIDIPacket`s or `MIDIPacketList`s from `CoreMIDI` or [AudioKit]
   #  non-essential files like tests, examples and documentation.
   #
 
-  s.resource  = "MIDIEventKit/Source/MIDIEventKit.strings"
+  s.resource  = "Source/MIDIEventKit.strings"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
