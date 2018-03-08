@@ -678,6 +678,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F40C8B9623A92EBA39F925C8 /* Pods-MIDIEventKit iOS.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -704,6 +705,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 232D2816BBD0388804ED3C0C /* Pods-MIDIEventKit iOS.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -830,7 +832,7 @@
 				DEVELOPMENT_TEAM = 77Y3N48SNF;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -850,7 +852,7 @@
 				DEVELOPMENT_TEAM = 77Y3N48SNF;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
