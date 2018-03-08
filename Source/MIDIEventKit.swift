@@ -12,15 +12,38 @@
 import Foundation
 import CoreMIDI
 
-private let sizeOfMIDIPacketList = MemoryLayout<MIDIPacketList>.size
-private let sizeOfMIDIPacket = MemoryLayout<MIDIPacket>.size
-private let sizeOfMIDIPacketListHeader = sizeOfMIDIPacketList - sizeOfMIDIPacket
-private let sizeOfMIDIPacketHeader = MemoryLayout<MIDITimeStamp>.size + MemoryLayout<UInt16>.size
-private let sizeOfMIDICombinedHeaders = sizeOfMIDIPacketListHeader + sizeOfMIDIPacketHeader
+extension Collection where Iterator.Element == MIDIEvent {
+  public var midiPacketList: MIDIPacketList {
+    guard let this = self as? [MIDIEvent] else { return MIDIPacketList() }
+
+    let packetListPointer = UnsafeMutablePointer<MIDIPacketList>.allocate(capacity: 1)
+    var packet = MIDIPacketListInit(packetListPointer)
+
+    for midi in this {
+      packet = MIDIPacketListAdd(packetListPointer, 65536, packet, midi.timestamp.value, midi.event.midiBytes.count, midi.event.midiBytes)
+    }
+
+    let packetList = MIDIPacketList(numPackets: UInt32(this.count), packet: packetListPointer.pointee.packet)
+    
+    packetListPointer.deinitialize()
+    packetListPointer.deallocate(capacity: this.count)
+
+    return packetList
+  }
+}
 
 public protocol MIDIStatusEvent: CustomStringConvertible {
+  /// Status byte of the midi event.
   var statusByte: UInt8 { get }
+  /// Holds midi event's values within two data packets.
   var dataBytes: MIDIEventData { get }
+}
+
+extension MIDIStatusEvent {
+  /// Returns 3 data packets with status and values of the midi event.
+  public var midiBytes: [UInt8] {
+    return [statusByte, dataBytes.data1, dataBytes.data2]
+  }
 }
 
 public protocol MIDIReservedEvent: MIDIStatusEvent {}

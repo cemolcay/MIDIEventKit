@@ -23,13 +23,18 @@ class ViewController: NSViewController, AKMIDIListener {
     let pitch = MIDIEvent(
       event: MIDIChannelVoiceEvent.pitchBendChange(bend: 8192, channel: 0),
       timestamp: .now)
-    midi.sendEvent(AKMIDIEvent(packet: pitch.midiPacket))
+//    midi.sendEvent(AKMIDIEvent(packet: pitch.midiPacket))
 
     let mod = MIDIEvent(
       event: MIDIChannelVoiceEvent.controllerChange(
-        event: .modulationWheel(value: 0),
+        event: .modulationWheel(value: 100),
         channel: 0),
       timestamp: .now)
-    midi.sendEvent(AKMIDIEvent(packet: mod.midiPacket))
+//    midi.sendEvent(AKMIDIEvent(packet: mod.midiPacket))
+
+    var packetList = [pitch, mod].midiPacketList
+    for endpoint in midi.endpoints {
+      MIDISend(midi.virtualInput, endpoint.value, &packetList)
+    }
   }
 }
