@@ -5,12 +5,22 @@
 //  Created by Cem Olcay on 7.03.2018.
 //  Copyright © 2018 cemolcay. All rights reserved.
 //
+//  Created by the midi.org official specs.
+//  https://www.midi.org/specifications/item/table-2-expanded-messages-list-status-bytes
+//
 
 import Foundation
 import CoreMIDI
 
+private let sizeOfMIDIPacketList = MemoryLayout<MIDIPacketList>.size
+private let sizeOfMIDIPacket = MemoryLayout<MIDIPacket>.size
+private let sizeOfMIDIPacketListHeader = sizeOfMIDIPacketList - sizeOfMIDIPacket
+private let sizeOfMIDIPacketHeader = MemoryLayout<MIDITimeStamp>.size + MemoryLayout<UInt16>.size
+private let sizeOfMIDICombinedHeaders = sizeOfMIDIPacketListHeader + sizeOfMIDIPacketHeader
+
 public protocol MIDIStatusEvent: CustomStringConvertible {
   var statusByte: UInt8 { get }
+  var dataBytes: MIDIEventData { get }
 }
 
 public protocol MIDIReservedEvent: MIDIStatusEvent {}
@@ -18,11 +28,16 @@ public protocol MIDISystemRealTimeReservedEvent: MIDIReservedEvent {}
 public protocol MIDISystemCommonReservedEvent: MIDIReservedEvent {}
 public protocol MIDIControllerReservedEvent: MIDIReservedEvent {}
 
+/// Timestamp value of the MIDI event message.
 public enum MIDIEventTimeStamp {
+  /// Initilize timestamp with a MIDITimeStamp value.
   case timestamp(MIDITimeStamp)
+  /// Timestamp is right now.
   case now
+  /// Future timestamp with a double value in seconds.
   case secondsAfterNow(Double)
 
+  /// MIDITimeStamp value for the MIDI message.
   var value: MIDITimeStamp {
     switch self {
     case .timestamp(let timestamp):
@@ -37,65 +52,126 @@ public enum MIDIEventTimeStamp {
   }
 }
 
+/// Holds two UInt8 MIDI data packets for the event messages.
 public struct MIDIEventData {
+  /// First midi data packet.
   var data1: UInt8
+  /// Second midi data packet.
   var data2: UInt8
 
+  /// Both data packets are empty.
+  init() {
+    data1 = 0
+    data2 = 0
+  }
+
+  /// Initilze both data packets with a UInt8 value between 0 - 127.
+  ///
+  /// - Parameters:
+  ///   - data1: First data packet value.
+  ///   - data2: Second data packet value.
   init(data1: UInt8, data2: UInt8) {
     self.data1 = data1
     self.data2 = data2
   }
 
-  init(value: MIDIEventValue) {
-    switch value {
-    case .value(let data1):
-      self.data1 = data1
-      self.data2 = 0
-    case .lsb_msb(let data):
-      let mask: UInt16 = 0x007F
-      self.data1 = UInt8(data & mask) // MSB, bit shift right 7
-      self.data2 = UInt8((data & (mask << 7)) >> 7) // LSB, mask of 127
-    case .on(let on):
-      self.data1 = on ? 127 : 0
-      self.data2 = 0
-    case .none:
-      self.data1 = 0
-      self.data2 = 0
-    }
+  /// Initilize only first data packet with UInt8 value between 0 - 127.
+  ///
+  /// - Parameter data1: First data packet value.
+  init(data1: UInt8) {
+    self.data1 = data1
+    self.data2 = 0
+  }
+
+  /// Initilize both packets with a UInt16 value between 0 - 16383.
+  ///
+  /// - Parameter data: Both data packets will be created by spliting into two UInt8 data packets by this UInt16 value.
+  init(data: UInt16) {
+    let mask: UInt16 = 0x007F
+    self.data1 = UInt8(data & mask) // MSB, bit shift right 7
+    self.data2 = UInt8((data & (mask << 7)) >> 7) // LSB, mask of 127
+  }
+
+  /// Initilize only first packet with a toggle on/off value.
+  ///
+  /// - Parameter on: On/off value of the first data packet.
+  init(on: Bool) {
+    self.data1 = on ? 127 : 0
+    self.data2 = 0
   }
 }
 
-public enum MIDIEventValue {
-  /// 8-bit value between 0 - 127.
-  case value(UInt8)
-  /// 16-bit value between 0 - 16383.
-  case lsb_msb(UInt16)
-  /// False for off, True for on.
-  case on(Bool)
-  /// No MIDI event data.
-  case none
+/// Create MIDI event messages with MIDIStatusEvent enums for sending or create them from MIDIPacket's for parsing received MIDI message.
+public struct MIDIEvent {
+  /// Event type of the MIDI message.
+  var event: MIDIStatusEvent
+  /// Timestamp of the MIDI message.
+  var timestamp: MIDIEventTimeStamp
+
+  /// Initilize midi event with `MIDIStatusEvent` enums and a timestamp.
+  ///
+  /// - Parameters:
+  ///   - event: Event type of the message.
+  ///   - timestamp: Timestamp of the message.
+  init(event: MIDIStatusEvent, timestamp: MIDIEventTimeStamp) {
+    self.event = event
+    self.timestamp = timestamp
+  }
+
+  /// Initilize midi event by parsing received midi packet.
+  ///
+  /// - Parameter midiPacket: Received midi packet for parsing into `MIDIEvent` struct.
+  init(midiPacket: MIDIPacket) {
+    event = MIDIChannelVoiceEvent.noteOn(note: 0, velocity: 0, channel: 0)
+    timestamp = .now
+  }
+
+  /// MIDI Packet representation for sending event message.
+  var midiPacket: MIDIPacket {
+    var packet = MIDIPacket()
+    packet.timeStamp = timestamp.value
+    packet.length = 3
+    packet.data.0 = event.statusByte
+    packet.data.1 = event.dataBytes.data1
+    packet.data.2 = event.dataBytes.data2
+    return packet
+  }
 }
 
+// MARK: - MIDI Channel Voice Events
+
 public enum MIDIChannelVoiceEvent: MIDIStatusEvent {
-  case noteOff // 128 - 143
-  case noteOn // 144 - 159
-  case polyphonicAftertouch // 160 - 175
-  case controllerChange(MIDIControllerEvent) // 176 - 191
-  case programChange(UInt8) // 192 - 207
-  case channelAftertouch // 208 - 223
-  case pitchBendChange // 224 - 239
+  case noteOff(note: UInt8, velocity: UInt8, channel: UInt8) // 128 - 143
+  case noteOn(note: UInt8, velocity: UInt8, channel: UInt8) // 144 - 159
+  case polyphonicAftertouch(note: UInt8, pressure: UInt8, channel: UInt8) // 160 - 175
+  case controllerChange(event: MIDIControllerEvent, channel: UInt8) // 176 - 191
+  case programChange(program: UInt8, channel: UInt8) // 192 - 207
+  case channelAftertouch(pressure: UInt8, channel: UInt8) // 208 - 223
+  case pitchBendChange(bend: UInt16, channel: UInt8) // 224 - 239
 
   // MARK: MIDIStatusEvent
 
   public var statusByte: UInt8 {
     switch self {
-    case .noteOff: return 128
-    case .noteOn: return 144
-    case .polyphonicAftertouch: return 160
-    case .controllerChange: return 176
-    case .programChange: return 192
-    case .channelAftertouch: return 208
-    case .pitchBendChange: return 224
+    case .noteOff(_, _, let channel): return 128 + channel
+    case .noteOn(_, _, let channel): return 144 + channel
+    case .polyphonicAftertouch(_, _, let channel): return 160 + channel
+    case .controllerChange(_, let channel): return 176 + channel
+    case .programChange(_, let channel): return 192 + channel
+    case .channelAftertouch(_, let channel): return 208 + channel
+    case .pitchBendChange(_, let channel): return 224 + channel
+    }
+  }
+
+  public var dataBytes: MIDIEventData {
+    switch self {
+    case .noteOff(let note, let velocity, _): return MIDIEventData(data1: note, data2: velocity)
+    case .noteOn(let note, let velocity, _): return MIDIEventData(data1: note, data2: velocity)
+    case .polyphonicAftertouch(let note, let pressure, _): return MIDIEventData(data1: note, data2: pressure)
+    case .controllerChange(let event, _): return event.dataBytes
+    case .programChange(let program, _): return MIDIEventData(data1: program)
+    case .channelAftertouch(let pressure, _): return MIDIEventData(data1: pressure)
+    case .pitchBendChange(let bend, _): return MIDIEventData(data: bend)
     }
   }
 
@@ -106,81 +182,83 @@ public enum MIDIChannelVoiceEvent: MIDIStatusEvent {
     case .noteOff: return NSLocalizedString("midi_noteOff", comment: "")
     case .noteOn: return NSLocalizedString("midi_noteOn", comment: "")
     case .polyphonicAftertouch: return NSLocalizedString("midi_polyphonicAftertouch", comment: "")
-    case .controllerChange(let event): return event.description
-    case .programChange(let event): return event.description
+    case .controllerChange(let event, _): return event.description
+    case .programChange(let event, _): return event.description
     case .channelAftertouch: return NSLocalizedString("midi_channelAftertouch", comment: "")
     case .pitchBendChange: return NSLocalizedString("midi_pitchBendChange", comment: "")
     }
   }
 }
 
+// MARK: MIDI Controller Events
+
 public enum MIDIControllerEvent: MIDIStatusEvent {
-  case bankSelect // 0
-  case modulationWheel // 1
-  case breathController // 2
-  case footController // 4
-  case portamentoTime // 5
-  case dataEntryMSB // 6
-  case channelVolume // 7
-  case balance // 8
-  case pan // 10
-  case expressionController // 11
-  case effectControl1 // 12
-  case effectControl2 // 13
-  case generalPurposeController1 // 16
-  case generalPurposeController2 // 17
-  case generalPurposeController3 // 18
-  case generalPurposeController4 // 19
-  case lsbBankSelect // 32
-  case lsbModulationWheel // 33
-  case lsbBreathController // 34
-  case lsbFootController // 38
-  case lsbPortamentoTime // 37
-  case lsbDataEntryMSB // 38
-  case lsbChannelVolume // 39
-  case lsbBalance // 40
-  case lsbPan // 42
-  case lsbExpressionController // 43
-  case lsbEffectControl1 // 44
-  case lsbEffectControl2 // 45
-  case lsbGeneralPurposeController1 // 48
-  case lsbGeneralPurposeController2 // 49
-  case lsbGeneralPurposeController3 // 50
-  case lsbGeneralPurposeController4 // 51
-  case damperPedal // 64
-  case portamentoOn // 65
-  case sostenutoOn // 66
-  case softPedalOn // 67
-  case legatoFootswitch // 68
-  case hold2 // 69
-  case soundVariation // 70
-  case timbreIntesity // 71
-  case releaseTime // 72
-  case attackTime // 73
-  case brightness // 74
-  case decayTime // 75
-  case vibratoRate // 76
-  case vibratoDepth // 77
-  case vibratoDelay // 78
-  case defaultUndefined // 79
-  case generalPurposeController5 // 80
-  case generalPurposeController6 // 81
-  case generalPurposeController7 // 82
-  case generalPurposeController8 // 83
-  case portamentoControl // 84
-  case highResolutionVelocityPrefix // 88
-  case reverbSendLevel // 91
-  case tremoloDepth // 92
-  case chorusSendLevel // 93
-  case celesteDepth // 94
-  case phaserDepth // 95
+  case bankSelect(value: UInt8) // 0
+  case modulationWheel(value: UInt8) // 1
+  case breathController(value: UInt8) // 2
+  case footController(value: UInt8) // 4
+  case portamentoTime(value: UInt8) // 5
+  case dataEntryMSB(value: UInt8) // 6
+  case channelVolume(value: UInt8) // 7
+  case balance(value: UInt8) // 8
+  case pan(value: UInt8) // 10
+  case expressionController(value: UInt8) // 11
+  case effectControl1(value: UInt8) // 12
+  case effectControl2(value: UInt8) // 13
+  case generalPurposeController1(value: UInt8) // 16
+  case generalPurposeController2(value: UInt8) // 17
+  case generalPurposeController3(value: UInt8) // 18
+  case generalPurposeController4(value: UInt8) // 19
+  case lsbBankSelect(value: UInt8) // 32
+  case lsbModulationWheel(value: UInt8) // 33
+  case lsbBreathController(value: UInt8) // 34
+  case lsbFootController(value: UInt8) // 38
+  case lsbPortamentoTime(value: UInt8) // 37
+  case lsbDataEntryMSB(value: UInt8) // 38
+  case lsbChannelVolume(value: UInt8) // 39
+  case lsbBalance(value: UInt8) // 40
+  case lsbPan(value: UInt8) // 42
+  case lsbExpressionController(value: UInt8) // 43
+  case lsbEffectControl1(value: UInt8) // 44
+  case lsbEffectControl2(value: UInt8) // 45
+  case lsbGeneralPurposeController1(value: UInt8) // 48
+  case lsbGeneralPurposeController2(value: UInt8) // 49
+  case lsbGeneralPurposeController3(value: UInt8) // 50
+  case lsbGeneralPurposeController4(value: UInt8) // 51
+  case damperPedal(on: Bool) // 64
+  case portamentoOn(on: Bool) // 65
+  case sostenutoOn(On: Bool) // 66
+  case softPedalOn(on: Bool) // 67
+  case legatoFootswitch(on: Bool) // 68
+  case hold2(on: Bool) // 69
+  case soundVariation(value: UInt8) // 70
+  case timbreIntesity(value: UInt8) // 71
+  case releaseTime(value: UInt8) // 72
+  case attackTime(value: UInt8) // 73
+  case brightness(value: UInt8) // 74
+  case decayTime(value: UInt8) // 75
+  case vibratoRate(value: UInt8) // 76
+  case vibratoDepth(value: UInt8) // 77
+  case vibratoDelay(value: UInt8) // 78
+  case defaultUndefined(value: UInt8) // 79
+  case generalPurposeController5(value: UInt8) // 80
+  case generalPurposeController6(value: UInt8) // 81
+  case generalPurposeController7(value: UInt8) // 82
+  case generalPurposeController8(value: UInt8) // 83
+  case portamentoControl(value: UInt8) // 84
+  case highResolutionVelocityPrefix(value: UInt8) // 88
+  case reverbSendLevel(value: UInt8) // 91
+  case tremoloDepth(value: UInt8) // 92
+  case chorusSendLevel(value: UInt8) // 93
+  case celesteDepth(value: UInt8) // 94
+  case phaserDepth(value: UInt8) // 95
   case dataIncrement // 96
   case dataDecrement // 97
-  case nonRegisteredParameterNumberLSB // 98
-  case nonRegisteredParameterNumberMSB // 99
-  case registeredParameterNumberLSB // 100
-  case registeredParameterNumberMSB // 101
-  case undefined(UInt8) // 3, 9, 14, 15, 20...31, 35, 21, 46, 47, 52...63, 85, 86, 87, 89, 90, 102...119
+  case nonRegisteredParameterNumberLSB(value: UInt8) // 98
+  case nonRegisteredParameterNumberMSB(value: UInt8) // 99
+  case registeredParameterNumberLSB(value: UInt8) // 100
+  case registeredParameterNumberMSB(value: UInt8) // 101
+  case undefined(MIDIControllerReservedEvent) // 3, 9, 14, 15, 20...31, 35, 21, 46, 47, 52...63, 85, 86, 87, 89, 90, 102...119
 
   // MARK: MIDIStatusEvent
 
@@ -251,7 +329,78 @@ public enum MIDIControllerEvent: MIDIStatusEvent {
     case .nonRegisteredParameterNumberMSB: return 99
     case .registeredParameterNumberLSB: return 100
     case .registeredParameterNumberMSB: return 101
-    case .undefined(let number): return number
+    case .undefined(let event): return event.statusByte
+    }
+  }
+
+  public var dataBytes: MIDIEventData {
+    switch self {
+    case .bankSelect(let value): return MIDIEventData(data1: value)
+    case .modulationWheel(let value): return MIDIEventData(data1: value)
+    case .breathController(let value): return MIDIEventData(data1: value)
+    case .footController(let value): return MIDIEventData(data1: value)
+    case .portamentoTime(let value): return MIDIEventData(data1: value)
+    case .dataEntryMSB(let value): return MIDIEventData(data1: value)
+    case .channelVolume(let value): return MIDIEventData(data1: value)
+    case .balance(let value): return MIDIEventData(data1: value)
+    case .pan(let value): return MIDIEventData(data1: value)
+    case .expressionController(let value): return MIDIEventData(data1: value)
+    case .effectControl1(let value): return MIDIEventData(data1: value)
+    case .effectControl2(let value): return MIDIEventData(data1: value)
+    case .generalPurposeController1(let value): return MIDIEventData(data1: value)
+    case .generalPurposeController2(let value): return MIDIEventData(data1: value)
+    case .generalPurposeController3(let value): return MIDIEventData(data1: value)
+    case .generalPurposeController4(let value): return MIDIEventData(data1: value)
+    case .lsbBankSelect(let value): return MIDIEventData(data1: value)
+    case .lsbModulationWheel(let value): return MIDIEventData(data1: value)
+    case .lsbBreathController(let value): return MIDIEventData(data1: value)
+    case .lsbFootController(let value): return MIDIEventData(data1: value)
+    case .lsbPortamentoTime(let value): return MIDIEventData(data1: value)
+    case .lsbDataEntryMSB(let value): return MIDIEventData(data1: value)
+    case .lsbChannelVolume(let value): return MIDIEventData(data1: value)
+    case .lsbBalance(let value): return MIDIEventData(data1: value)
+    case .lsbPan(let value): return MIDIEventData(data1: value)
+    case .lsbExpressionController(let value): return MIDIEventData(data1: value)
+    case .lsbEffectControl1(let value): return MIDIEventData(data1: value)
+    case .lsbEffectControl2(let value): return MIDIEventData(data1: value)
+    case .lsbGeneralPurposeController1(let value): return MIDIEventData(data1: value)
+    case .lsbGeneralPurposeController2(let value): return MIDIEventData(data1: value)
+    case .lsbGeneralPurposeController3(let value): return MIDIEventData(data1: value)
+    case .lsbGeneralPurposeController4(let value): return MIDIEventData(data1: value)
+    case .damperPedal(let on): return MIDIEventData(on: on)
+    case .portamentoOn(let on): return MIDIEventData(on: on)
+    case .sostenutoOn(let on): return MIDIEventData(on: on)
+    case .softPedalOn(let on): return MIDIEventData(on: on)
+    case .legatoFootswitch(let on): return MIDIEventData(on: on)
+    case .hold2(let on): return MIDIEventData(on: on)
+    case .soundVariation(let value): return MIDIEventData(data1: value)
+    case .timbreIntesity(let value): return MIDIEventData(data1: value)
+    case .releaseTime(let value): return MIDIEventData(data1: value)
+    case .attackTime(let value): return MIDIEventData(data1: value)
+    case .brightness(let value): return MIDIEventData(data1: value)
+    case .decayTime(let value): return MIDIEventData(data1: value)
+    case .vibratoRate(let value): return MIDIEventData(data1: value)
+    case .vibratoDepth(let value): return MIDIEventData(data1: value)
+    case .vibratoDelay(let value): return MIDIEventData(data1: value)
+    case .defaultUndefined(let value): return MIDIEventData(data1: value)
+    case .generalPurposeController5(let value): return MIDIEventData(data1: value)
+    case .generalPurposeController6(let value): return MIDIEventData(data1: value)
+    case .generalPurposeController7(let value): return MIDIEventData(data1: value)
+    case .generalPurposeController8(let value): return MIDIEventData(data1: value)
+    case .portamentoControl(let value): return MIDIEventData(data1: value)
+    case .highResolutionVelocityPrefix(let value): return MIDIEventData(data1: value)
+    case .reverbSendLevel(let value): return MIDIEventData(data1: value)
+    case .tremoloDepth(let value): return MIDIEventData(data1: value)
+    case .chorusSendLevel(let value): return MIDIEventData(data1: value)
+    case .celesteDepth(let value): return MIDIEventData(data1: value)
+    case .phaserDepth(let value): return MIDIEventData(data1: value)
+    case .dataIncrement: return MIDIEventData()
+    case .dataDecrement: return MIDIEventData()
+    case .nonRegisteredParameterNumberLSB(let value): return MIDIEventData(data1: value)
+    case .nonRegisteredParameterNumberMSB(let value): return MIDIEventData(data1: value)
+    case .registeredParameterNumberLSB(let value): return MIDIEventData(data1: value)
+    case .registeredParameterNumberMSB(let value): return MIDIEventData(data1: value)
+    case .undefined(let event): return event.dataBytes
     }
   }
 
@@ -329,15 +478,19 @@ public enum MIDIControllerEvent: MIDIStatusEvent {
   }
 }
 
+// MARK: - MIDI Channel Mode Events
+
 public enum MIDIChannelModeEvent: MIDIStatusEvent {
   case allSoundOff // 120
   case resetAllControllers // 121
-  case localControl // 122
+  case localControl(on: Bool) // 122
   case allNotesOff // 123
   case omniModeOff // 124
   case omniModeOn // 125
   case monoModeOn // 126
   case polyModeOn // 127
+
+  // MARK: MIDIStatusEvent
 
   public var statusByte: UInt8 {
     switch self {
@@ -349,6 +502,19 @@ public enum MIDIChannelModeEvent: MIDIStatusEvent {
     case .omniModeOn: return 125
     case .monoModeOn: return 126
     case .polyModeOn: return 127
+    }
+  }
+
+  public var dataBytes: MIDIEventData {
+    switch self {
+    case .allSoundOff: return MIDIEventData()
+    case .resetAllControllers: return MIDIEventData()
+    case .localControl(let on): return MIDIEventData(on: on)
+    case .allNotesOff: return MIDIEventData()
+    case .omniModeOff: return MIDIEventData()
+    case .omniModeOn: return MIDIEventData()
+    case .monoModeOn: return MIDIEventData()
+    case .polyModeOn: return MIDIEventData()
     }
   }
 
@@ -368,18 +534,50 @@ public enum MIDIChannelModeEvent: MIDIStatusEvent {
   }
 }
 
-public struct MIDIQuarterFrameEvent: CustomStringConvertible {
+// MARK: MIDI Quarter Frame Events
+
+public enum SMPTERate: UInt8 {
+  case fps24 = 0x00
+  case fps25 = 0x01
+  case fps30 = 0x02
+  case fps30drop = 0x03
+}
+
+public enum MIDIQuarterFrameEvent: CustomStringConvertible {
+  case framesLowNibble(UInt8)
+  case framesHighNibble(UInt8)
+  case secondsLowNibble(UInt8)
+  case secondsHighNibble(UInt8)
+  case minutesLowNibble(UInt8)
+  case minutesHighNibble(UInt8)
+  case hoursLowNibble(UInt8)
+  case hoursHighNibble(nibble: UInt8, rate: SMPTERate)
+
+  public var dataBytes: MIDIEventData {
+    switch self {
+    case .framesLowNibble(let nibble): return MIDIEventData(data1: 0x00 + nibble)
+    case .framesHighNibble(let nibble): return MIDIEventData(data1: 0x10 + nibble)
+    case .secondsLowNibble(let nibble): return MIDIEventData(data1: 0x20 + nibble)
+    case .secondsHighNibble(let nibble): return MIDIEventData(data1: 0x30 + nibble)
+    case .minutesLowNibble(let nibble): return MIDIEventData(data1: 0x40 + nibble)
+    case .minutesHighNibble(let nibble): return MIDIEventData(data1: 0x50 + nibble)
+    case .hoursLowNibble(let nibble): return MIDIEventData(data1: 0x60 + nibble)
+    case .hoursHighNibble(let nibble, let rate): return MIDIEventData(data1: 0x70 + (rate.rawValue + nibble))
+    }
+  }
 
   public var description: String {
-    return ""
+    return NSLocalizedString("midi_quarterFrameEvent", comment: "")
   }
 }
 
+// MARK: MIDI System Common Events
+
 public enum MIDISystemCommonEvent: MIDIStatusEvent {
-  case systemExclusive // 240
+  case systemExclusive(data1: UInt8, data2: UInt8) // 240
   case midiTimeCodeQuarterFrame(MIDIQuarterFrameEvent) // 241
-  case songPositionPointer // 242
-  case songSelect // 243
+  case songPositionPointer(pointer: UInt16) // 242
+  case songSelect(song: UInt8) // 243
   case tuneRequest // 246
   case eox // 247
   case reserved(MIDISystemCommonReservedEvent) // 245, 244
@@ -398,6 +596,18 @@ public enum MIDISystemCommonEvent: MIDIStatusEvent {
     }
   }
 
+  public var dataBytes: MIDIEventData {
+    switch self {
+    case .systemExclusive(let data1, let data2): return MIDIEventData(data1: data1, data2: data2)
+    case .midiTimeCodeQuarterFrame(let frame): return frame.dataBytes
+    case .songPositionPointer(let pointer): return MIDIEventData(data: pointer)
+    case .songSelect(let song): return MIDIEventData(data1: song)
+    case .tuneRequest: return MIDIEventData()
+    case .eox: return MIDIEventData()
+    case .reserved(let event): return event.dataBytes
+    }
+  }
+
   // MARK: CustomStringConvertible
 
   public var description: String {
@@ -412,6 +622,8 @@ public enum MIDISystemCommonEvent: MIDIStatusEvent {
     }
   }
 }
+
+// MARK: MIDI System Real Time Events
 
 public enum MIDISystemRealTimeEvent: MIDIStatusEvent {
   case timingClock // 248
@@ -428,11 +640,23 @@ public enum MIDISystemRealTimeEvent: MIDIStatusEvent {
     switch self {
     case .timingClock: return 248
     case .start: return 250
-    case .continue: return 251
+    case .`continue`: return 251
     case .stop: return 252
     case .activeSensing: return 254
     case .reset: return 255
     case .reserved(let event): return event.statusByte
+    }
+  }
+
+  public var dataBytes: MIDIEventData {
+    switch self {
+    case .timingClock: return MIDIEventData()
+    case .start: return MIDIEventData()
+    case .`continue`: return MIDIEventData()
+    case .stop: return MIDIEventData()
+    case .activeSensing: return MIDIEventData()
+    case .reset: return MIDIEventData()
+    case .reserved(let event): return event.dataBytes
     }
   }
 
@@ -442,7 +666,7 @@ public enum MIDISystemRealTimeEvent: MIDIStatusEvent {
     switch self {
     case .timingClock: return NSLocalizedString("midi_timingClock", comment: "")
     case .start: return NSLocalizedString("midi_start", comment: "")
-    case .continue: return NSLocalizedString("midi_continue", comment: "")
+    case .`continue`: return NSLocalizedString("midi_continue", comment: "")
     case .stop: return NSLocalizedString("midi_stop", comment: "")
     case .activeSensing: return NSLocalizedString("midi_activeSensing", comment: "")
     case .reset: return NSLocalizedString("midi_reset", comment: "")

@@ -22,6 +22,7 @@
 "midi_songSelect" = "Song Select";
 "midi_tuneRequest" = "Tune Request";
 "midi_eox" = "EOX";
+"midi_quarterFrameEvent" = "Quarter Frame";
 
 // MIDI Channel Change
 
