@@ -159,6 +159,11 @@ public struct MIDIEvent {
     packet.data.2 = event.dataBytes.data2
     return packet
   }
+
+  /// Returns a MIDIPacketList packed with itself.
+  public var midiPacketList: MIDIPacketList {
+    return MIDIPacketList(numPackets: 1, packet: midiPacket)
+  }
 }
 
 // MARK: - MIDI Channel Voice Events
