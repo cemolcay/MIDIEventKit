@@ -9,849 +9,919 @@
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 16,
-      "symbol": "Collection.midiPacketList",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "line": 36,
+      "symbol": "==(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 35,
+      "line": 41,
       "symbol": "MIDIStatusEvent",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 49,
-      "symbol": "MIDIReservedEvent",
+      "line": 47,
+      "symbol": "MIDIStatusEvent.init(statusByte:dataBytes:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 56,
+      "symbol": "MIDIStatusEvent.init(midiPacket:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 65,
+      "symbol": "MIDIEventUndefinable",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 50,
-      "symbol": "MIDISystemRealTimeReservedEvent",
-      "symbol_kind": "source.lang.swift.decl.protocol",
+      "line": 66,
+      "symbol": "MIDIEventUndefinable.undefinedEventStatusBytes",
+      "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 51,
-      "symbol": "MIDISystemCommonReservedEvent",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 52,
-      "symbol": "MIDIControllerReservedEvent",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 171,
+      "line": 220,
       "symbol": "MIDIChannelVoiceEvent",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 172,
+      "line": 221,
       "symbol": "MIDIChannelVoiceEvent.noteOff",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 173,
+      "line": 222,
       "symbol": "MIDIChannelVoiceEvent.noteOn",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 174,
+      "line": 223,
       "symbol": "MIDIChannelVoiceEvent.polyphonicAftertouch",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 175,
+      "line": 224,
       "symbol": "MIDIChannelVoiceEvent.controllerChange",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 176,
+      "line": 225,
       "symbol": "MIDIChannelVoiceEvent.programChange",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 177,
+      "line": 226,
       "symbol": "MIDIChannelVoiceEvent.channelAftertouch",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 178,
+      "line": 227,
       "symbol": "MIDIChannelVoiceEvent.pitchBendChange",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 223,
+      "line": 255,
+      "symbol": "MIDIChannelVoiceEvent.init(statusByte:dataBytes:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 316,
       "symbol": "MIDIControllerEvent",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 224,
+      "line": 317,
       "symbol": "MIDIControllerEvent.bankSelect",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 225,
+      "line": 318,
       "symbol": "MIDIControllerEvent.modulationWheel",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 226,
+      "line": 319,
       "symbol": "MIDIControllerEvent.breathController",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 227,
+      "line": 320,
       "symbol": "MIDIControllerEvent.footController",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 228,
+      "line": 321,
       "symbol": "MIDIControllerEvent.portamentoTime",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 229,
+      "line": 322,
       "symbol": "MIDIControllerEvent.dataEntryMSB",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 230,
+      "line": 323,
       "symbol": "MIDIControllerEvent.channelVolume",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 231,
+      "line": 324,
       "symbol": "MIDIControllerEvent.balance",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 232,
+      "line": 325,
       "symbol": "MIDIControllerEvent.pan",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 233,
+      "line": 326,
       "symbol": "MIDIControllerEvent.expressionController",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 234,
+      "line": 327,
       "symbol": "MIDIControllerEvent.effectControl1",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 235,
+      "line": 328,
       "symbol": "MIDIControllerEvent.effectControl2",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 236,
+      "line": 329,
       "symbol": "MIDIControllerEvent.generalPurposeController1",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 237,
+      "line": 330,
       "symbol": "MIDIControllerEvent.generalPurposeController2",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 238,
+      "line": 331,
       "symbol": "MIDIControllerEvent.generalPurposeController3",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 239,
+      "line": 332,
       "symbol": "MIDIControllerEvent.generalPurposeController4",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 240,
+      "line": 333,
       "symbol": "MIDIControllerEvent.lsbBankSelect",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 241,
+      "line": 334,
       "symbol": "MIDIControllerEvent.lsbModulationWheel",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 242,
+      "line": 335,
       "symbol": "MIDIControllerEvent.lsbBreathController",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 243,
+      "line": 336,
       "symbol": "MIDIControllerEvent.lsbFootController",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 244,
+      "line": 337,
       "symbol": "MIDIControllerEvent.lsbPortamentoTime",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 245,
+      "line": 338,
       "symbol": "MIDIControllerEvent.lsbDataEntryMSB",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 246,
+      "line": 339,
       "symbol": "MIDIControllerEvent.lsbChannelVolume",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 247,
+      "line": 340,
       "symbol": "MIDIControllerEvent.lsbBalance",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 248,
+      "line": 341,
       "symbol": "MIDIControllerEvent.lsbPan",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 249,
+      "line": 342,
       "symbol": "MIDIControllerEvent.lsbExpressionController",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 250,
+      "line": 343,
       "symbol": "MIDIControllerEvent.lsbEffectControl1",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 251,
+      "line": 344,
       "symbol": "MIDIControllerEvent.lsbEffectControl2",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 252,
+      "line": 345,
       "symbol": "MIDIControllerEvent.lsbGeneralPurposeController1",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 253,
+      "line": 346,
       "symbol": "MIDIControllerEvent.lsbGeneralPurposeController2",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 254,
+      "line": 347,
       "symbol": "MIDIControllerEvent.lsbGeneralPurposeController3",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 255,
+      "line": 348,
       "symbol": "MIDIControllerEvent.lsbGeneralPurposeController4",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 256,
+      "line": 349,
       "symbol": "MIDIControllerEvent.damperPedal",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 257,
+      "line": 350,
       "symbol": "MIDIControllerEvent.portamentoOn",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 258,
+      "line": 351,
       "symbol": "MIDIControllerEvent.sostenutoOn",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 259,
+      "line": 352,
       "symbol": "MIDIControllerEvent.softPedalOn",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 260,
+      "line": 353,
       "symbol": "MIDIControllerEvent.legatoFootswitch",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 261,
+      "line": 354,
       "symbol": "MIDIControllerEvent.hold2",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 262,
+      "line": 355,
       "symbol": "MIDIControllerEvent.soundVariation",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 263,
+      "line": 356,
       "symbol": "MIDIControllerEvent.timbreIntesity",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 264,
+      "line": 357,
       "symbol": "MIDIControllerEvent.releaseTime",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 265,
+      "line": 358,
       "symbol": "MIDIControllerEvent.attackTime",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 266,
+      "line": 359,
       "symbol": "MIDIControllerEvent.brightness",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 267,
+      "line": 360,
       "symbol": "MIDIControllerEvent.decayTime",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 268,
+      "line": 361,
       "symbol": "MIDIControllerEvent.vibratoRate",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 269,
+      "line": 362,
       "symbol": "MIDIControllerEvent.vibratoDepth",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 270,
+      "line": 363,
       "symbol": "MIDIControllerEvent.vibratoDelay",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 271,
+      "line": 364,
       "symbol": "MIDIControllerEvent.defaultUndefined",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 272,
+      "line": 365,
       "symbol": "MIDIControllerEvent.generalPurposeController5",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 273,
+      "line": 366,
       "symbol": "MIDIControllerEvent.generalPurposeController6",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 274,
+      "line": 367,
       "symbol": "MIDIControllerEvent.generalPurposeController7",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 275,
+      "line": 368,
       "symbol": "MIDIControllerEvent.generalPurposeController8",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 276,
+      "line": 369,
       "symbol": "MIDIControllerEvent.portamentoControl",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 277,
+      "line": 370,
       "symbol": "MIDIControllerEvent.highResolutionVelocityPrefix",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 278,
+      "line": 371,
       "symbol": "MIDIControllerEvent.reverbSendLevel",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 279,
+      "line": 372,
       "symbol": "MIDIControllerEvent.tremoloDepth",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 280,
+      "line": 373,
       "symbol": "MIDIControllerEvent.chorusSendLevel",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 281,
+      "line": 374,
       "symbol": "MIDIControllerEvent.celesteDepth",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 282,
+      "line": 375,
       "symbol": "MIDIControllerEvent.phaserDepth",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 283,
+      "line": 376,
       "symbol": "MIDIControllerEvent.dataIncrement",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 284,
+      "line": 377,
       "symbol": "MIDIControllerEvent.dataDecrement",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 285,
+      "line": 378,
       "symbol": "MIDIControllerEvent.nonRegisteredParameterNumberLSB",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 286,
+      "line": 379,
       "symbol": "MIDIControllerEvent.nonRegisteredParameterNumberMSB",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 287,
+      "line": 380,
       "symbol": "MIDIControllerEvent.registeredParameterNumberLSB",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 288,
+      "line": 381,
       "symbol": "MIDIControllerEvent.registeredParameterNumberMSB",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 289,
+      "line": 382,
+      "symbol": "MIDIControllerEvent.channelMode",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 383,
       "symbol": "MIDIControllerEvent.undefined",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 511,
+      "line": 531,
+      "symbol": "MIDIControllerEvent.init(statusByte:dataBytes:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 612,
+      "symbol": "MIDIControllerEvent.undefinedEventStatusBytes",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 694,
       "symbol": "MIDIChannelModeEvent",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 512,
+      "line": 695,
       "symbol": "MIDIChannelModeEvent.allSoundOff",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 513,
+      "line": 696,
       "symbol": "MIDIChannelModeEvent.resetAllControllers",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 514,
+      "line": 697,
       "symbol": "MIDIChannelModeEvent.localControl",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 515,
+      "line": 698,
       "symbol": "MIDIChannelModeEvent.allNotesOff",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 516,
+      "line": 699,
       "symbol": "MIDIChannelModeEvent.omniModeOff",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 517,
+      "line": 700,
       "symbol": "MIDIChannelModeEvent.omniModeOn",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 518,
+      "line": 701,
       "symbol": "MIDIChannelModeEvent.monoModeOn",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 519,
+      "line": 702,
       "symbol": "MIDIChannelModeEvent.polyModeOn",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 567,
+      "line": 732,
+      "symbol": "MIDIChannelModeEvent.init(statusByte:dataBytes:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 764,
       "symbol": "SMPTERate",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 568,
+      "line": 765,
       "symbol": "SMPTERate.fps24",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 569,
+      "line": 766,
       "symbol": "SMPTERate.fps25",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 570,
+      "line": 767,
       "symbol": "SMPTERate.fps30",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 571,
+      "line": 768,
       "symbol": "SMPTERate.fps30drop",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 574,
+      "line": 771,
       "symbol": "MIDIQuarterFrameEvent",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 575,
+      "line": 772,
       "symbol": "MIDIQuarterFrameEvent.framesLowNibble",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 576,
+      "line": 773,
       "symbol": "MIDIQuarterFrameEvent.framesHighNibble",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 577,
+      "line": 774,
       "symbol": "MIDIQuarterFrameEvent.secondsLowNibble",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 578,
+      "line": 775,
       "symbol": "MIDIQuarterFrameEvent.secondsHighNibble",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 579,
+      "line": 776,
       "symbol": "MIDIQuarterFrameEvent.minutesLowNibble",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 580,
+      "line": 777,
       "symbol": "MIDIQuarterFrameEvent.minutesHighNibble",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 581,
+      "line": 778,
       "symbol": "MIDIQuarterFrameEvent.hoursLowNibble",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 582,
+      "line": 779,
       "symbol": "MIDIQuarterFrameEvent.hoursHighNibble",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 584,
+      "line": 781,
       "symbol": "MIDIQuarterFrameEvent.dataBytes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 604,
+      "line": 798,
+      "symbol": "MIDIQuarterFrameEvent.init(data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 832,
       "symbol": "MIDISystemCommonEvent",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 605,
+      "line": 833,
       "symbol": "MIDISystemCommonEvent.systemExclusive",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 606,
+      "line": 834,
       "symbol": "MIDISystemCommonEvent.midiTimeCodeQuarterFrame",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 607,
+      "line": 835,
       "symbol": "MIDISystemCommonEvent.songPositionPointer",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 608,
+      "line": 836,
       "symbol": "MIDISystemCommonEvent.songSelect",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 609,
+      "line": 837,
       "symbol": "MIDISystemCommonEvent.tuneRequest",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 610,
+      "line": 838,
       "symbol": "MIDISystemCommonEvent.eox",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 611,
+      "line": 839,
       "symbol": "MIDISystemCommonEvent.reserved",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 656,
+      "line": 867,
+      "symbol": "MIDISystemCommonEvent.init(statusByte:dataBytes:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 891,
+      "symbol": "MIDISystemCommonEvent.undefinedEventStatusBytes",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 912,
       "symbol": "MIDISystemRealTimeEvent",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 657,
+      "line": 913,
       "symbol": "MIDISystemRealTimeEvent.timingClock",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 658,
+      "line": 914,
       "symbol": "MIDISystemRealTimeEvent.start",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 659,
+      "line": 915,
       "symbol": "MIDISystemRealTimeEvent.continue",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 660,
+      "line": 916,
       "symbol": "MIDISystemRealTimeEvent.stop",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 661,
+      "line": 917,
       "symbol": "MIDISystemRealTimeEvent.activeSensing",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 662,
+      "line": 918,
       "symbol": "MIDISystemRealTimeEvent.reset",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
-      "line": 663,
+      "line": 919,
       "symbol": "MIDISystemRealTimeEvent.reserved",
       "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 947,
+      "symbol": "MIDISystemRealTimeEvent.init(statusByte:dataBytes:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift",
+      "line": 966,
+      "symbol": "MIDISystemRealTimeEvent.undefinedEventStatusBytes",
+      "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     }
   ],

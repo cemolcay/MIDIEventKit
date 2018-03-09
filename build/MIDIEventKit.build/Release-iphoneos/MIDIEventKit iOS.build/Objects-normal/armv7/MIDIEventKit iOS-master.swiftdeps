@@ -1,0 +1,5 @@
+version: "Apple Swift version 4.0.3 (swiftlang-900.0.74.1 clang-900.0.39.2)"
+options: "573d8ddf9e2f7533829894230aada7ba"
+build_time: [1520607952, 676222000]
+inputs:
+  "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.swift": [9223372036, 854775807]

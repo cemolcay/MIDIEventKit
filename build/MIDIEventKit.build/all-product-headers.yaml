@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/Cem/Desktop/MIDIEventKit/build/Release-iphoneos/MIDIEventKit.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MIDIEventKit-Swift.h",
+          'external-contents': "/Users/Cem/Desktop/MIDIEventKit/build/Release-iphoneos/MIDIEventKit.framework/Headers/MIDIEventKit-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "MIDIEventKit.h",
+          'external-contents': "/Users/Cem/Desktop/MIDIEventKit/Source/MIDIEventKit.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Cem/Desktop/MIDIEventKit/build/Release-iphoneos/MIDIEventKit.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Cem/Desktop/MIDIEventKit/build/MIDIEventKit.build/Release-iphoneos/MIDIEventKit iOS.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

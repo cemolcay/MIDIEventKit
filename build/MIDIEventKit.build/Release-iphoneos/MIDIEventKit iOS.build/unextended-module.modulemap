@@ -1,0 +1,10 @@
+framework module MIDIEventKit {
+  umbrella header "MIDIEventKit.h"
+
+  export *
+  module * { export * }
+}
+
+module MIDIEventKit.__Swift {
+    exclude header "MIDIEventKit-Swift.h"
+}
