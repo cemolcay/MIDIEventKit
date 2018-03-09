@@ -110,3 +110,5 @@
 "midi_nonRegisteredParameterNumberMSB" = "Non-RegisteredParameterNumberMSB";
 "midi_registeredParameterNumberLSB" = "Registered Parameter Number LSB";
 "midi_registeredParameterNumberMSB" = "Registered Parameter Number MSB";
+
+"midi_undefined" = "Undefined";
