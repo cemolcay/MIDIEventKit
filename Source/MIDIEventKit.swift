@@ -14,22 +14,24 @@ import CoreMIDI
 
 extension Collection where Iterator.Element == MIDIEvent {
   /// Creates a `MIDIPacketList` representation from `MIDIEvent` array.
-  public var midiPacketList: MIDIPacketList {
-    guard let this = self as? [MIDIEvent] else { return MIDIPacketList() }
+  public var midiPacketList: UnsafeMutablePointer<MIDIPacketList> {
+    guard let this = self as? [MIDIEvent] else { fatalError() }
 
-    let packetListPointer = UnsafeMutablePointer<MIDIPacketList>.allocate(capacity: 1)
+    let packetListPointer = UnsafeMutablePointer<MIDIPacketList>.allocate(capacity: this.count)
     var packet = MIDIPacketListInit(packetListPointer)
 
     for midi in this {
       packet = MIDIPacketListAdd(packetListPointer, 65536, packet, midi.timestamp.value, midi.event.midiBytes.count, midi.event.midiBytes)
     }
 
-    let packetList = MIDIPacketList(numPackets: UInt32(this.count), packet: packetListPointer.pointee.packet)
-    
-    packetListPointer.deinitialize()
-    packetListPointer.deallocate(capacity: this.count)
+    return packetListPointer
 
-    return packetList
+//    let packetList = MIDIPacketList(numPackets: UInt32(this.count), packet: packetListPointer.pointee.packet)
+//
+//    packetListPointer.deinitialize()
+//    packetListPointer.deallocate(capacity: this.count)
+//
+//    return packetList
   }
 }
 

@@ -34,7 +34,8 @@ class ViewController: NSViewController, AKMIDIListener {
 
     var packetList = [pitch, mod].midiPacketList
     for endpoint in midi.endpoints {
-      MIDISend(midi.virtualInput, endpoint.value, &packetList)
+      MIDISend(midi.virtualInput, endpoint.value, packetList)
     }
+    
   }
 }
