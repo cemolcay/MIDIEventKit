@@ -12,12 +12,12 @@
 		<key>MIDIEventKit Mac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>MIDIEventKit iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>3</integer>
 		</dict>
 		<key>MIDIEventKit.xcscheme</key>
 		<dict>
