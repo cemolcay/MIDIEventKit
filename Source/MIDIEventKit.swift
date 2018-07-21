@@ -21,7 +21,7 @@ extension Collection where Iterator.Element == MIDIEvent {
     var packet = MIDIPacketListInit(packetListPointer)
 
     for midi in this {
-      packet = MIDIPacketListAdd(packetListPointer, 65536, packet, midi.timestamp.value, midi.event.midiBytes.count, midi.event.midiBytes)
+      packet = MIDIPacketListAdd(packetListPointer, 1024, packet, midi.timestamp.value, midi.event.midiBytes.count, midi.event.midiBytes)
     }
 
     return packetListPointer
@@ -294,8 +294,9 @@ public enum MIDIChannelVoiceEvent: MIDIStatusEvent {
       self = .pitchBendChange(
         bend: UInt16((dataBytes.data2 << 8) | dataBytes.data1),
         channel: channel)
+    } else {
+      return nil
     }
-    return nil
   }
 
   // MARK: CustomStringConvertible
