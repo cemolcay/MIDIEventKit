@@ -32,10 +32,10 @@ class ViewController: NSViewController, AKMIDIListener {
       timestamp: .now)
 //    midi.sendEvent(AKMIDIEvent(packet: mod.midiPacket))
 
-    var packetList = [pitch, mod].midiPacketList
+    let packetList = [pitch, mod].midiPacketList
     for endpoint in midi.endpoints {
       MIDISend(midi.virtualInput, endpoint.value, packetList)
     }
-    
+    packetList.deallocate()
   }
 }

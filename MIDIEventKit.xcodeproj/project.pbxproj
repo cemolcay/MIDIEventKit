@@ -16,8 +16,6 @@
 		B280798B2051687C0033D8CA /* MIDIEventKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = B28079852051687C0033D8CA /* MIDIEventKit.strings */; };
 		B280798C2051687C0033D8CA /* MIDIEventKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = B28079852051687C0033D8CA /* MIDIEventKit.strings */; };
 		B280798D2051687C0033D8CA /* MIDIEventKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = B28079852051687C0033D8CA /* MIDIEventKit.strings */; };
-		B280798E2051687C0033D8CA /* Info iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = B28079862051687C0033D8CA /* Info iOS.plist */; };
-		B28079922051687C0033D8CA /* Info Mac.plist in Resources */ = {isa = PBXBuildFile; fileRef = B28079872051687C0033D8CA /* Info Mac.plist */; };
 		B28079942051687C0033D8CA /* MIDIEventKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28079882051687C0033D8CA /* MIDIEventKit.swift */; };
 		B28079952051687C0033D8CA /* MIDIEventKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28079882051687C0033D8CA /* MIDIEventKit.swift */; };
 		B28079962051687C0033D8CA /* MIDIEventKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28079882051687C0033D8CA /* MIDIEventKit.swift */; };
@@ -232,7 +230,6 @@
 				B280795B205167E80033D8CA /* Frameworks */,
 				B280795C205167E80033D8CA /* Headers */,
 				B280795D205167E80033D8CA /* Resources */,
-				CD03B685CFF8C11AA8DCC674 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,7 +249,6 @@
 				B2807968205167F70033D8CA /* Frameworks */,
 				B2807969205167F70033D8CA /* Headers */,
 				B280796A205167F70033D8CA /* Resources */,
-				F3463BF46FB398D379B93DD2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -289,8 +285,7 @@
 				B2807997205168BE0033D8CA /* Sources */,
 				B2807998205168BE0033D8CA /* Frameworks */,
 				B2807999205168BE0033D8CA /* Resources */,
-				487808480A4B534AC44FA9C0 /* [CP] Embed Pods Frameworks */,
-				0598B87AD280C61727DA11C2 /* [CP] Copy Pods Resources */,
+				4EF5774E8B845D3201D9B0B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -308,19 +303,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = cemolcay;
 				TargetAttributes = {
 					B280795E205167E80033D8CA = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					B280796B205167F70033D8CA = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					B2807977205168090033D8CA = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					B280799A205168BE0033D8CA = {
@@ -356,7 +354,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B280798B2051687C0033D8CA /* MIDIEventKit.strings in Resources */,
-				B280798E2051687C0033D8CA /* Info iOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +362,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B280798C2051687C0033D8CA /* MIDIEventKit.strings in Resources */,
-				B28079922051687C0033D8CA /* Info Mac.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,21 +386,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0598B87AD280C61727DA11C2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		30BCE5DA0EEFF86606049354 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,22 +404,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		487808480A4B534AC44FA9C0 /* [CP] Embed Pods Frameworks */ = {
+		4EF5774E8B845D3201D9B0B8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AudioKit/AudioKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
+				"${PODS_ROOT}/AudioKit/macOS/AudioKitUI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKitUI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8CF6DC63B993F283650ED464 /* [CP] Check Pods Manifest.lock */ = {
@@ -459,21 +444,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CD03B685CFF8C11AA8DCC674 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MIDIEventKit iOS/Pods-MIDIEventKit iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F05D1E6640B11F31B3CFCD37 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,21 +460,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F3463BF46FB398D379B93DD2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MIDIEventKit Mac/Pods-MIDIEventKit Mac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -581,6 +536,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -588,6 +544,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -638,6 +595,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -645,6 +603,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -694,7 +653,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cemolcay.MIDIEventKit-iOS";
 				PRODUCT_NAME = MIDIEventKit;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -721,7 +680,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cemolcay.MIDIEventKit-iOS";
 				PRODUCT_NAME = MIDIEventKit;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -732,7 +691,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7FBCA92B0E4245B447B87FFD /* Pods-MIDIEventKit Mac.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -750,7 +709,7 @@
 				PRODUCT_NAME = MIDIEventKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -760,7 +719,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 19FF26D21C0824B962ABA6BF /* Pods-MIDIEventKit Mac.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -778,7 +737,7 @@
 				PRODUCT_NAME = MIDIEventKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -798,7 +757,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.MIDIEventKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -816,7 +775,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cemolcay.MIDIEventKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

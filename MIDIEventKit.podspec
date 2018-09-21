@@ -16,7 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MIDIEventKit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
+  s.swift_version = "4.2"
 s.summary      = "MIDI data structures for Swift. Send MIDI events in human language."
 
   # This description is used to generate tags and improve search results.

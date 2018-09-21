@@ -552,7 +552,7 @@ public enum MIDIControllerEvent: MIDIStatusEvent, MIDIEventUndefinable {
     case 32: self = .lsbBankSelect(value: dataBytes.data2)
     case 33: self = .lsbModulationWheel(value: dataBytes.data2)
     case 34: self = .lsbBreathController(value: dataBytes.data2)
-    case 38: self = .lsbFootController(value: dataBytes.data2)
+    case 36: self = .lsbFootController(value: dataBytes.data2)
     case 37: self = .lsbPortamentoTime(value: dataBytes.data2)
     case 38: self = .lsbDataEntryMSB(value: dataBytes.data2)
     case 39: self = .lsbChannelVolume(value: dataBytes.data2)
